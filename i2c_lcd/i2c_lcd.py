@@ -13,10 +13,8 @@
 # ******************************************************************************
 
 from machine import I2C
-import i2c_lcd_backlight
-import i2c_lcd_screen
-
-
+from .i2c_lcd_backlight import Backlight
+from .i2c_lcd_screen import Screen
 
 class Display(object):
     screen = None
