@@ -6,7 +6,7 @@
 # Backlight i2c default Address = 0x62
 # Backlight Grove RGB Display v5.0 - default address = 0x30
 
-from machine import I2C
+from machine import I2C, SoftI2C
 
 class Backlight(object):
     # colour registers for v3 and v4
@@ -21,7 +21,7 @@ class Backlight(object):
     RGB_ADDRESS_V5 = 0x30
 
     def __init__(self, i2c, address):
-        if not isinstance(i2c, I2C):
+        if not isinstance(i2c, (I2C, SoftI2C)):
             raise TypeError
 
         self.i2c = i2c
