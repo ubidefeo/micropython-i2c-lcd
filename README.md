@@ -6,7 +6,7 @@ This library is designed to support a MicroPython interface for i2c LCD characte
 
 ![RGB](assets/LCDRGB.jpg)
 
-[Grove LCD RGB Backlight v2.0, v3.0, v4.0](https://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/)
+[Grove LCD RGB Backlight v2.0, v3.0, v4.0, v5.0](https://wiki.seeedstudio.com/Grove-LCD_RGB_Backlight/)
 
 ![RGB](assets/LCDMONO.jpg)
 
@@ -60,8 +60,8 @@ Changes the color of the LCD Backlight to (r,g,b)
 Examples are provided in the _examples_ folder.
 
 **Note:**
-To use Grove RGB Display versions older than V5.0 you will need to initialize the Display object supplying the model
+Grove RGB Display initialisation is auto-detected, hence just supply the bus.
 
 ```Python
-my_display = RGBDisplay(i2c_bus, 0x3e, RGBDisplay.GROVE_RGB_V4)
+my_display = RGBDisplay(i2c_bus)
 ```

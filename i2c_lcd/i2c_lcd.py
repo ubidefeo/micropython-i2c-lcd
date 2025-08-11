@@ -51,13 +51,15 @@ class Display(object):
 
 class RGBDisplay(Display):
     # Grove RGB Display versions
-    GROVE_RGB_V4 = (4, 0x62) # version 3-4
-    GROVE_RGB_V5 = (5, 0x30) # version 5 replaced the LED controller
+    GROVE_RGB_V4_ADDRESS = 0x62 # version 3-4
+    GROVE_RGB_V5_ADDRESS = 0x30 # version 5 replaced the LED controller
 
     backlight = None
 
-    def __init__(self, i2c, lcd_addr=0x3e, display_version = GROVE_RGB_V5):
-        rgb_addr = display_version[1]
+    def __init__(self, i2c, lcd_addr=0x3e):
+        i2c_devices = i2c.scan()
+        display_version = self.GROVE_RGB_V5_ADDRESS if self.GROVE_RGB_V5_ADDRESS in i2c_devices else self.GROVE_RGB_V4_ADDRESS
+        rgb_addr = display_version
         self.backlight = Backlight(i2c, rgb_addr)
         super().__init__(i2c, lcd_addr)
     

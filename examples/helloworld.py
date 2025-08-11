@@ -1,6 +1,6 @@
-# This example works with both Grove i2c LCD Displays:
-# - Black on Yellow
-# - RGB Backlight 
+# This example works with both Multiple i2c LCD Displays, including the following from Seeed Studio:
+# - Grove LCD RGB Backlight
+# - Grove LCD 16x2 (single color backlight)
 
 import i2c_lcd
 from machine import I2C
